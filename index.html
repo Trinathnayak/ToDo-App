@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script src="https://kit.fontawesome.com/b7841d193e.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+	<style type="text/css">
+		*
+		{
+			margin: 0%;
+		}
+		.listType
+		{
+			list-style: none;
+
+		}
+		body
+		{
+			background-image: url(https://media.istockphoto.com/id/1293850746/photo/to-do-list.jpg?b=1&s=170667a&w=0&k=20&c=TnvCl7dU0GaKiMoK6ma9fZV_eBsxNBRmc51r-dBDsRY=);
+			background-size: 90rem;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-position: center;
+
+			
+		}
+		.cssEdit
+		{
+			text-align: center;
+			margin: 5% 50% 5% 10%;
+			padding: 5% 5% 5% 0% ;
+			border: 1px solid black;
+			background-color: whitesmoke;
+			border-radius: 2rem;
+			
+		}
+		#toDo
+		{
+			color: white;
+		}
+		.newColor
+		{
+			color: orange;
+			font-size: 1rem;
+			font-weight: bold;
+			
+		}
+
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+		function todo(s)
+		{
+		let newTodo=document.getElementById("toDo").value,todolist=[]
+			if(newTodo==="")
+			{
+				alert("Enter Your ToDo value")
+			}
+			else
+			{
+				add(newTodo)
+			}
+			/*todolist.push(newTodo)*/
+			console.log(todolist);
+			document.getElementById("toDo").value=""
+
+		}
+		function add(newMsg){
+			let	ul=document.querySelector("ul")
+			console.log(ul)
+			let li=document.createElement("li");
+			const d=new Date()
+			var h=d.getHours();
+			const m=d.getMinutes();
+			li.innerHTML=`
+			<span class="newColor">${newMsg} </span>
+			<button id="delete" name="deleteButton"class="btn btn-red" (click)="removeItem()">
+			<i class="fas fa-trash"></i>
+			</button>
+			<span>Time:-${h}:${m}</span>
+			`
+			li.classList.add("listType")
+			ul.appendChild(li)
+		}
+		function delete1(del)
+		{
+			if(del===newColor){
+
+			}
+		}
+	</script>
+	<div class="cssEdit">
+	<input  id="toDo" class="btn btn-success btn-lg " type="text" placeholder="Enter text">
+	<ul>
+		
+	</ul>
+	<button id="button" type="button" onclick="todo()" class="btn btn-primary btn-lg ">click</button>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">		</script>
+
+</body>
+</html>
+<!-- <button name="deleteButton" class="delete"><i class="fas fa-trash"></i></button> -->
+<!-- <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  				<strong><span class="newColor">${newMsg} </span><span>Time:-${h}:${m}</span></strong>
+  				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    			<span aria-hidden="true">&times;</span>
+ 				 </button>
+			</div> -->
+
+<!-- <span class="newColor">${newMsg} </span>
+			<button name="deleteButton"class="btn btn-red" (click)="removeItem()">
+			<i class="fas fa-trash"></i>
+			</button>
+			<span>Time:-${h}:${m}</span> -->
+			
